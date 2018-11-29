@@ -8,5 +8,10 @@ https://daringfireball.net/projects/markdown/syntax
 #### Part B
 #### Part C
 ### Chapter 2
+<ul>
+  <li>Dog</li>
+  <li>Cat</li>
+  <li>Bird</li>
+</ul>
 ### Chapter 3
 
