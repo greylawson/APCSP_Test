@@ -2,5 +2,8 @@
 
 https://daringfireball.net/projects/markdown/syntax
 
-## I like Headers
+## Table of Contents
+### Chapter 1
+### Chapter 2
+### Chapter 3
 
