@@ -1,10 +1,17 @@
+var pg = new Pig();
+
 function setup() {
     createCanvas(740, 480);
 }
 
 function draw() {
-    var x = width/4;
-    var y = height/2;
+    background(0,255,0);
+    pg.display();
+}
+
+function Pig() {
+    var x = mouseX;
+    var y = mouseY;
     
     //draws a puppy
     //face
