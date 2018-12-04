@@ -1,17 +1,23 @@
-var pg = new Pig();
+var pg;
 
 function setup() {
     createCanvas(740, 480);
+    pg = new Pig();
 }
 
 function draw() {
-    background(0,255,0);
+    background(0,250,0);
     pg.display();
 }
+
 
 function Pig() {
     var x = mouseX;
     var y = mouseY;
+    
+    this.display = function() {
+        var x = mouseX;
+        var y = mouseY;
     
     //draws a puppy
     //face
@@ -63,7 +69,7 @@ function Pig() {
     //face
     noStroke();
     fill('#FF99FF');
-    ellipse(x*3, y, 200, 200);
+    ellipse(x+380, y, 200, 200);
     
     //earLeft
     noStroke();
@@ -77,30 +83,30 @@ function Pig() {
     
     //eyeLeft
     fill('#FFFFFF');
-    ellipse((x*3)-42, y-26, 54, 54);
+    ellipse((x+380)-42, y-26, 54, 54);
     
     //pupilLeft
     fill('#0000FF');
-    ellipse((x*3)-42, y-26, 30, 30);
+    ellipse((x+380)-42, y-26, 30, 30);
     
     //eyeRight
     fill('#FFFFFF');
-    ellipse((x*3)+42, y-26, 54, 54);
+    ellipse((x+380)+42, y-26, 54, 54);
     
     //pupilRight
     fill('#0000FF');
-    ellipse((x*3)+42, y-26, 30, 30);
+    ellipse((x+380)+42, y-26, 30, 30);
     
     //nose
     fill('#FF3399');
-    rect((x*3)-25, y+10, 50, 50);
+    rect((x+380)-25, y+10, 50, 50);
     
     //nostrilLeft
     fill('#000000');
-    ellipse((x*3)-12, y+20, 13, 13);
+    ellipse((x+380)-12, y+20, 13, 13);
     
     //nostrilRight
     fill('#000000');
-    ellipse((x*3)+12, y+20, 13, 13);
+    ellipse((x+380)+12, y+20, 13, 13);
+    }
 }
-
