@@ -9,9 +9,6 @@ https://daringfireball.net/projects/markdown/syntax
   <li>Icecream</li>
   <li>Pizza</li>
 </ol>
-#### Part B
-#### Part C
-### Chapter 2
 <ul>
   <li>Dog</li>
   <li>Cat</li>
