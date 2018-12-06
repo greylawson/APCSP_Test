@@ -74,12 +74,12 @@ function Pig() {
     //earLeft
     noStroke();
     fill('#FF99FF');
-    triangle(515, 135, 460, 190, 455, 130);
+    triangle(x+290, y-50, x+324, y-90, x+280, y-115);
     
     //earRight
     noStroke();
     fill('#FF99FF');
-    triangle(665, 130, 650, 190, 600, 135);
+    triangle(x+420, y-95, x+465, y-120, x+460, y-67);
     
     //eyeLeft
     fill('#FFFFFF');
