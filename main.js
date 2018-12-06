@@ -3,12 +3,14 @@ var pg;
 function setup() {
     createCanvas(740, 480);
     pg = new Pig();
+    var foodNum = prompt("How many apples do you want to feed the animals?");
 }
 
 function draw() {
     background(0,250,0);
     pg.display();
 }
+
 
 
 function Pig() {
@@ -110,3 +112,4 @@ function Pig() {
     ellipse((x+380)+12, y+20, 13, 13);
     }
 }
+
