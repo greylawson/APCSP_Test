@@ -7,13 +7,17 @@ if(amount < 0){
 var numFood = amount;
 
 function setup() {
-    createCanvas(740, 480);
+    createCanvas(windowWidth, windowHeight);
     pg = new Pig();
     
     // initializing a set amount number of food
     for(var i = 0; i < numFood; i++) {
         feed.push(new Food(random(width), random(height)));
     }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -50,7 +54,7 @@ function Food(x, y) {
 function Pig() {
     var x = mouseX;
     var y = mouseY;
-    var diameter = 200;
+    var diameter = 100;
 
     this.getDistance = function(other) {
         var di = Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
@@ -63,9 +67,6 @@ function Pig() {
             var d = this.getDistance(food);
             var r1 = food.foodSize / 2;
             var r2 = diameter / 2;
-            console.log(r1);
-            console.log(r2);
-            console.log(d);
             if(r1 + r2 > d) {
                 feed.splice(i, 1);
             }
