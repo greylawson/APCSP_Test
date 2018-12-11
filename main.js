@@ -1,6 +1,6 @@
 var pg;
 var feed = [];
-var amount = prompt("How many apples do you want to feed the animals?");
+var amount = prompt("How many apples do you want to feed the pig?");
 if(amount < 0){
     var amount = prompt("Please enter a number zero or greater.")
 }
