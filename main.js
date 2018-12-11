@@ -8,6 +8,7 @@ var numFood = amount;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    noCursor();
     pg = new Pig();
     
     // initializing a set amount number of food
