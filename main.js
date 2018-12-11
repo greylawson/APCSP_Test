@@ -22,7 +22,7 @@ function windowResized() {
 }
 
 function draw() {
-    background(0,250,0);
+    background(102,255,255);
     pg.display();
     
     // display all the food
