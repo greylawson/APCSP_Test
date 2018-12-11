@@ -5,6 +5,7 @@ https://daringfireball.net/projects/markdown/syntax
 ## Table of Contents
 ### Chapter 1
 #### Part A
+#####Step I
 <ol>
   <li>Icecream</li>
   <li>Pizza</li>
