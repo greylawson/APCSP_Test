@@ -53,9 +53,8 @@ function Pig() {
     var diameter = 200;
 
     this.getDistance = function(other) {
-        var d = dist(x, other.x, y, other.y);
-        //var dist = Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
-        return d;
+        var di = Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
+        return di;
     }
     
     this.eat = function() {
@@ -74,8 +73,9 @@ function Pig() {
     }
     
     this.display = function() {
-        var x = mouseX;
-        var y = mouseY;
+        x = mouseX;
+        y = mouseY;
+        noStroke();
     
     //draws a pig
     //face
