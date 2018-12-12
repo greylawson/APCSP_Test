@@ -1,5 +1,6 @@
 var pg;
 var feed = [];
+var counter = 0;
 var amount = prompt("How many apples do you want to feed the pig?");
 if(amount < 0){
     var amount = prompt("Please enter a number zero or greater.")
@@ -29,6 +30,9 @@ function draw() {
     for(var i = 0; i < feed.length; i++) {
         feed[i].display();
     }
+    text("You have eaten " + counter + " of " + numFood + " apples.", 25, 35);
+    textSize(25);
+    fill(0, 0, 255);
 }
 
 function mousePressed() {
@@ -48,8 +52,10 @@ function Food(x, y) {
     this.display = function() {
         fill(this.color);
         ellipse(this.x, this.y, this.foodSize, this.foodSize);
-        fill(0,255,0)
-        rect(this.x-5, this.y-10, 10, -40);
+        fill(51, 204, 51)
+        rect(this.x-4, this.y-15, 8, -25);
+        ellipse(this.x+11, this.y-21, 30, 10);
+        
     }
 }
 
@@ -72,6 +78,7 @@ function Pig() {
             var r2 = diameter / 2;
             if(r1 + r2 > d) {
                 feed.splice(i, 1);
+                counter++;
             }
         }
     }
