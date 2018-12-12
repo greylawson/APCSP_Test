@@ -2,7 +2,7 @@ var pg;
 var feed = [];
 var counter = 0;
 var amount = prompt("How many apples do you want to feed the pig?");
-if(amount < 0){
+while(amount < 0){
     var amount = prompt("Please enter a number zero or greater.")
 }
 var numFood = amount;
@@ -32,7 +32,6 @@ function draw() {
     }
     text("You have eaten " + counter + " of " + numFood + " apples.", 25, 35);
     textSize(25);
-    fill(0, 0, 255);
 }
 
 function mousePressed() {
