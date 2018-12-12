@@ -48,6 +48,8 @@ function Food(x, y) {
     this.display = function() {
         fill(this.color);
         ellipse(this.x, this.y, this.foodSize, this.foodSize);
+        fill(0,255,0)
+        rect(this.x-5, this.y-10, 10, -40);
     }
 }
 
@@ -113,15 +115,24 @@ function Pig() {
     
     //nose
     fill('#FF3399');
-    rect(x-25, y+10, 50, 50);
+    rect(x-20, y+10, 40, 40);
     
     //nostrilLeft
     fill('#000000');
-    ellipse(x-12, y+20, 13, 13);
+    ellipse(x-12, y+20, 12, 12);
     
     //nostrilRight
     fill('#000000');
-    ellipse(x+12, y+20, 13, 13);
+    ellipse(x+12, y+20, 12, 12);
+    
+    //mouth
+    if (mouseIsPressed) {
+        ellipse(x, y+75, 60, 40);
+    } else {
+        fill(230, 0, 76);
+        arc(x, y+65, 60, 45, 0, HALF_PI);
+        arc(x, y+65, 60, 45, HALF_PI, PI);
+        }
     }
 }
 
