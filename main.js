@@ -1,6 +1,7 @@
 var pg;
 var feed = [];
 var counter = 0;
+
 var amount = prompt("How many apples do you want to feed the pig?");
 while(amount < 0){
     var amount = prompt("Please enter a number zero or greater.")
@@ -16,6 +17,7 @@ function setup() {
     for(var i = 0; i < numFood; i++) {
         feed.push(new Food(random(width), random(height)));
     }
+    
 }
 
 function windowResized() {
@@ -26,10 +28,19 @@ function draw() {
     background(102,255,255);
     pg.display();
     
+    noStroke();
+    fill(0,230,0);
+    triangle(0, windowHeight, windowWidth/64, windowHeight-80, windowWidth/32, windowHeight);
+    triangle(0+(windowWidth/32), windowHeight, 64+(windowWidth/64), windowHeight-80, 64+(windowWidth/32), windowHeight);
+    triangle(64+(windowWidth/32), windowHeight, 128+(windowWidth/64), windowHeight-80, 128+(windowWidth/32), windowHeight);
+    triangle(128+(windowWidth/32), windowHeight, 192+(windowWidth/64), windowHeight-80, 192+(windowWidth/32), windowHeight);
+    
     // display all the food
     for(var i = 0; i < feed.length; i++) {
         feed[i].display();
     }
+    noStroke();
+    fill(0,0,250);
     text("You have eaten " + counter + " of " + numFood + " apples.", 25, 35);
     textSize(25);
 }
@@ -141,4 +152,3 @@ function Pig() {
         }
     }
 }
-
