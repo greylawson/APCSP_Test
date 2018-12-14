@@ -26,14 +26,36 @@ function windowResized() {
 
 function draw() {
     background(102,255,255);
-    pg.display();
     
-    noStroke();
-    fill(0,230,0);
-    triangle(0, windowHeight, windowWidth/64, windowHeight-80, windowWidth/32, windowHeight);
-    triangle(0+(windowWidth/32), windowHeight, 64+(windowWidth/64), windowHeight-80, 64+(windowWidth/32), windowHeight);
-    triangle(64+(windowWidth/32), windowHeight, 128+(windowWidth/64), windowHeight-80, 128+(windowWidth/32), windowHeight);
-    triangle(128+(windowWidth/32), windowHeight, 192+(windowWidth/64), windowHeight-80, 192+(windowWidth/32), windowHeight);
+    // draws grass
+    for(var i = -15; i < windowWidth; i+=10){
+        fill(0,230,0);
+        noStroke();
+        triangle(i, windowHeight, i+20, windowHeight-random(50,70), i+40, windowHeight);
+        fill(0,230,0);
+    }
+    
+    // draws second row of clouds
+    for(var i = -300; i < windowWidth+100; i+=200) {
+        fill(255,255,255);
+        strokeWeight(20);
+        stroke(224,224,224);
+        ellipse(i, 70, 220, 90);
+        noStroke();
+        fill(255,255,255);
+    }
+    
+    // draws first row of clouds
+    for(var i = 0; i < windowWidth+100; i+=200) {
+        fill(255,255,255);
+        strokeWeight(15);
+        stroke(224,224,224);
+        ellipse(i, 10, 220, 90);
+        noStroke();
+        fill(255,255,255);
+    }
+    
+    pg.display();
     
     // display all the food
     for(var i = 0; i < feed.length; i++) {
@@ -81,7 +103,7 @@ function Pig() {
     }
     
     this.eat = function() {
-        for(var i = 0; i < feed.length ; i++) {
+        for(var i = feed.length-1; i >= 0; i--) {
             var food = feed[i];
             var d = this.getDistance(food);
             var r1 = food.foodSize / 2;
