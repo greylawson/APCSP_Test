@@ -16,8 +16,7 @@ function setup() {
     // initializing a set amount number of food
     for(var i = 0; i < numFood; i++) {
         feed.push(new Food(random(width), random(height)));
-    }
-    
+    } 
 }
 
 function windowResized() {
@@ -44,6 +43,11 @@ function draw() {
         noStroke();
         fill(255,255,255);
     }
+    
+    //draws sun
+    fill(255,245,85);
+    ellipse(200, windowHeight-windowHeight/1.09, 200, 200);
+    noStroke();
     
     // draws first row of clouds
     for(var i = 0; i < windowWidth+100; i+=200) {
